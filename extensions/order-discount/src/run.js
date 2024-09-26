@@ -19,10 +19,11 @@ const EMPTY_DISCOUNT = {
  * @returns {FunctionRunResult}
  */
 export function run(input) {
-  const configuration = JSON.parse(
+  const metaData = JSON.parse(
     input?.discountNode?.metafield?.value ?? "{}"
   );
-  const isApplicable = input.cart.cost.totalAmount.amount > 500;
+
+  const isApplicable = input.cart.cost.totalAmount.amount > metaData.threshold;
 
 
 
@@ -30,6 +31,7 @@ export function run(input) {
     discountApplicationStrategy: DiscountApplicationStrategy.Maximum,
     discounts: [
       {
+        message: "Hey you got a discount by function app",
         targets: [
           {
             orderSubtotal: {
@@ -38,8 +40,8 @@ export function run(input) {
           }
         ],
         value: {
-          fixedAmount: {
-            amount: 20
+          percentage: {
+            value: metaData.discountValue
           }
         }
       }
