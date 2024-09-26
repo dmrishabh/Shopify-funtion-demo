@@ -22,8 +22,11 @@ export function run(input) {
   const configuration = JSON.parse(
     input?.discountNode?.metafield?.value ?? "{}"
   );
+  const isApplicable = input.cart.cost.totalAmount.amount > 500;
 
-  return {
+
+
+  return isApplicable ? {
     discountApplicationStrategy: DiscountApplicationStrategy.Maximum,
     discounts: [
       {
@@ -41,5 +44,5 @@ export function run(input) {
         }
       }
     ]
-  };
+  } : EMPTY_DISCOUNT;
 };
