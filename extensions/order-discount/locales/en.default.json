@@ -1,4 +1,4 @@
 {
-  "name": "order-discount",
-  "description": "order-discount"
+  "name": "Customizable Order Discount Function",
+  "description": "Apply a customizable discount based on merchant-set discount percentage and order value threshold."
 }

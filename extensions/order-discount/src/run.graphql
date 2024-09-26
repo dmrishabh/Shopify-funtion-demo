@@ -1,6 +1,17 @@
 query RunInput {
+  cart {
+    cost {
+      totalAmount {
+        amount
+        currencyCode
+      }
+    }
+    lines {
+      id
+    }
+  }
   discountNode {
-    metafield(namespace: "$app:order-discount", key: "function-configuration") {
+    metafield(namespace: "custom-order-discount", key: "discount-values") {
       value
     }
   }

@@ -23,5 +23,23 @@ export function run(input) {
     input?.discountNode?.metafield?.value ?? "{}"
   );
 
-  return EMPTY_DISCOUNT;
+  return {
+    discountApplicationStrategy: DiscountApplicationStrategy.Maximum,
+    discounts: [
+      {
+        targets: [
+          {
+            orderSubtotal: {
+              excludedVariantIds: []
+            }
+          }
+        ],
+        value: {
+          fixedAmount: {
+            amount: 20
+          }
+        }
+      }
+    ]
+  };
 };

@@ -18,9 +18,11 @@ description = "t:description"
 
 ## To make our run.graphql eligible so that it can take variables in input query we will add configs for input 
 
+
+
 ## As this is extension only app so ui paths are blank
 
   [extensions.ui.paths]
   create = "/"
   details = "/"
-  
+
