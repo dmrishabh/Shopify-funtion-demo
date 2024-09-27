@@ -18,7 +18,10 @@ description = "t:description"
 
 ## To make our run.graphql eligible so that it can take variables in input query we will add configs for input 
 
-
+  [extensions.input.variables]
+  namespace = "custom-order-discount"
+  key = "discount-values"
+   
 
 ## As this is extension only app so ui paths are blank
 

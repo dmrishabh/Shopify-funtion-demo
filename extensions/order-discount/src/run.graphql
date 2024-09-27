@@ -1,4 +1,4 @@
-query RunInput {
+query RunInput($exclusionTags: [String!]) {
   cart {
     cost {
       totalAmount {
@@ -8,6 +8,15 @@ query RunInput {
     }
     lines {
       id
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          product {
+            id
+            hasAnyTag(tags: $exclusionTags)
+          }
+        }
+      }
     }
   }
   discountNode {

@@ -6,8 +6,9 @@ Create a Shopify checkout function that applies a **customizable discount**. The
 
 1. The **discount percentage** (default: 10%).
 2. The **order value threshold** (default: $100).
+3. Update: Exclusion product tag (default: no-auto-discount)
 
-If the total order value exceeds the specified threshold-x, the discount is applied. If the order value is below the threshold, no discount is applied.
+   If the total order value exceeds the specified threshold-x, the discount is applied. If the order value is below the threshold, no discount is applied.
 
 ## Requirements:
 
